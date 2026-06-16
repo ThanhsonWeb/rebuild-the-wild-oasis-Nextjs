@@ -5,7 +5,7 @@ export const metadata = {
 export default function Cabins() {
 	return (
 		<div>
-			<h1 className="text-4xl mb-5 text-accent-400 font-medium">
+			<h1 className="text-4xl mb-5 text-yellow-500 font-medium">
 				Our Luxury Cabins
 			</h1>
 			<p className="text-primary-200 text-lg mb-10">
