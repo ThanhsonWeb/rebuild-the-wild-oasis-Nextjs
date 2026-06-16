@@ -8,7 +8,7 @@ function Logo() {
       <Image
         src={logo}
         height='60'
-        quality={100}
+        quality={80}
         width='60'
         alt='The Wild Oasis logo'
       />
