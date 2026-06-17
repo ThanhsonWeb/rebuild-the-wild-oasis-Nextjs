@@ -1,0 +1,10 @@
+[
+	{ "name": "Vietnam", "code": "vn" },
+	{ "name": "France", "code": "fr" },
+	{ "name": "United States", "code": "us" },
+	{ "name": "Japan", "code": "jp" },
+	{ "name": "Brazil", "code": "br" },
+	{ "name": "Germany", "code": "de" },
+	{ "name": "Canada", "code": "ca" },
+	{ "name": "Australia", "code": "au" }
+]
