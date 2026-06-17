@@ -1,13 +1,14 @@
+import { Suspense } from "react";
 import CabinCard from "../_components/CabinCard";
+import CabinList from "../_components/CabinList";
 import { getCabins } from "../_lib/data-service";
+import Spinner from "../_components/Spinner";
 
 export const metadata = {
 	title: "Cabins",
 };
 // server-c
-export default async function Cabins() {
-	const cabins = await getCabins();
-	console.log(cabins);
+export default function Cabins() {
 	return (
 		<div>
 			<h1 className="text-4xl mb-5 text-yellow-500 font-medium">
@@ -21,12 +22,9 @@ export default async function Cabins() {
 				home away from home. The perfect spot for a peaceful, calm vacation.
 				Welcome to paradise.
 			</p>
-
-			<ul>
-				{cabins.map((cabin) => (
-					<CabinCard key={cabin.id} cabin={cabin} />
-				))}
-			</ul>
+			<Suspense fallback={<Spinner />}>
+				<CabinList />
+			</Suspense>
 		</div>
 	);
 }
