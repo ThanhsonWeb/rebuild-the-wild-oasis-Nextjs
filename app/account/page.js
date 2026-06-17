@@ -1,3 +1,5 @@
+import SideNavigation from "../_components/SideNavigation";
+
 export const metadata = {
 	title: "Guest area",
 };
@@ -5,7 +7,7 @@ export const metadata = {
 function page() {
 	return (
 		<div>
-			<h1>Account</h1>
+			<SideNavigation />
 		</div>
 	);
 }
