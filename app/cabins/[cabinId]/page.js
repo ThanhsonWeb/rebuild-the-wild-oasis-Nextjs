@@ -1,3 +1,4 @@
+import Reservation from "@/app/_components/Reservation";
 import TextExpander from "@/app/_components/TextExpander";
 import { getCabin, getCabins } from "@/app/_lib/data-service";
 import { EyeSlashIcon, MapPinIcon, UsersIcon } from "@heroicons/react/24/solid";
@@ -30,7 +31,12 @@ export default async function Page({ params }) {
 		<div className="max-w-6xl mx-auto mt-8">
 			<div className="grid grid-cols-[3fr_4fr] gap-20 border border-primary-800 py-3 px-10 mb-24">
 				<div className="relative scale-[1.15] -translate-x-3">
-					<Image src={image}  fill alt={`Cabin ${name}`} className="object-cover" />
+					<Image
+						src={image}
+						fill
+						alt={`Cabin ${name}`}
+						className="object-cover"
+					/>
 				</div>
 
 				<div>
@@ -71,6 +77,7 @@ export default async function Page({ params }) {
 				<h2 className="text-5xl font-semibold text-center">
 					Reserve today. Pay on arrival.
 				</h2>
+				<Reservation />
 			</div>
 		</div>
 	);

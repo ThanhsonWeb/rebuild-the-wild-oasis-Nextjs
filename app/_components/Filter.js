@@ -4,6 +4,7 @@ import { usePathname, useSearchParams, useRouter } from "next/navigation";
 import Button from "./Button";
 
 function Filter() {
+   // build a filter component that updates the query string in the URL. 
 	const searchParams = useSearchParams();
 	const activeFilter = searchParams.get("capacity");
 
