@@ -5,6 +5,8 @@ import Button from "./Button";
 
 function Filter() {
 	const searchParams = useSearchParams();
+	const activeFilter = searchParams.get("capacity");
+
 	// b2 new hook
 	const router = useRouter();
 	const pathname = usePathname();
@@ -17,20 +19,33 @@ function Filter() {
 	}
 
 	return (
-		<div>
-			<button
-				className="px-5 py-2 hover:bg-gray-800"
-				onClick={() => handleFilter("all")}
+		<div className="my-5 flex justify-end " >
+			<Button
+				handleFilter={handleFilter}
+				filter="all"
+				activeFilter={activeFilter}
 			>
-				All cabins
-			</button>
-			<Button handleFilter={handleFilter} filter="small">
+				All Cabins
+			</Button>
+			<Button
+				handleFilter={handleFilter}
+				filter="small"
+				activeFilter={activeFilter}
+			>
 				1&mdash; 3 guests
 			</Button>
-			<Button handleFilter={handleFilter} filter="medium">
+			<Button
+				handleFilter={handleFilter}
+				filter="medium"
+				activeFilter={activeFilter}
+			>
 				4&mdash; 7 guests
 			</Button>
-			<Button handleFilter={handleFilter} filter="large">
+			<Button
+				handleFilter={handleFilter}
+				filter="large"
+				activeFilter={activeFilter}
+			>
 				8&mdash; 12 guests
 			</Button>
 		</div>
