@@ -3,12 +3,16 @@ import CabinCard from "../_components/CabinCard";
 import CabinList from "../_components/CabinList";
 import { getCabins } from "../_lib/data-service";
 import Spinner from "../_components/Spinner";
+import Filter from "../_components/Filter";
 
 export const metadata = {
 	title: "Cabins",
 };
 // server-c
-export default function Cabins() {
+export default async function page({ searchParams }) {
+	const query = await searchParams;
+	const filter = query?.capacity ?? "all";
+
 	return (
 		<div>
 			<h1 className="text-4xl mb-5 text-yellow-500 font-medium">
@@ -22,8 +26,11 @@ export default function Cabins() {
 				home away from home. The perfect spot for a peaceful, calm vacation.
 				Welcome to paradise.
 			</p>
+
+			<Filter />
+
 			<Suspense fallback={<Spinner />}>
-				<CabinList />
+				<CabinList filter={filter} />
 			</Suspense>
 		</div>
 	);
