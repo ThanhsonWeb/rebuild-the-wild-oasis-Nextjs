@@ -6,8 +6,9 @@ export const metadata = {
 
 function page() {
 	return (
-		<div>
-			<SideNavigation />
+		<div className="flex items-center gap-4">
+			<h2>Account :</h2>
+			<h2 className="text-xl text-yellow-600 "> Son</h2>
 		</div>
 	);
 }
