@@ -3,6 +3,7 @@ import Logo from "@/app/_components/Logo";
 import Navigation from "@/app/_components/Navigation";
 import Header from "./_components/Header";
 import { Roboto } from "next/font/google";
+import { ReservationProvider } from "./contexts/ReservationContext";
 const roboto = Roboto({
 	subsets: ["latin"],
 	display: "swap",
@@ -19,12 +20,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
 	return (
-		<html lang="en">     
-			<body 
-				className={`${roboto.className}  text-gray-500 min-h-screen`}
-			>
+		<html lang="en">
+			<body className={`${roboto.className}  text-gray-500 min-h-screen`}>
 				<Header />
-				<main className="max-w-7xl mx-auto my-10 p-10 "> {children}</main>
+				<main className="max-w-7xl mx-auto my-10 p-10 ">
+					<ReservationProvider>{children}</ReservationProvider>
+				</main>
 			</body>
 		</html>
 	);

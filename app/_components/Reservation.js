@@ -11,7 +11,11 @@ async function Reservation({ cabin }) {
 
 	return (
 		<div className="grid grid-cols-[1fr_1fr] my-10 gap-10 ">
-			<DateSelector />
+			<DateSelector
+				cabin={cabin}
+				settings={settings}
+				bookedDates={bookedDates}
+			/>
 			<ReservationForm cabin={cabin} />
 		</div>
 	);
