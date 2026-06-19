@@ -9,14 +9,17 @@ function ReservationForm({ cabin, user }) {
 			<div className="bg-gray-800 text-primary-300 px-16 py-2 flex justify-between items-center">
 				<p>Logged in as</p>
 
-				<div className="flex gap-4 items-center">
-					<Image
-						// Important to display google profile images
-						referrerPolicy="no-referrer"
-						className="h-8 rounded-full"
-						src={user.image}
-						alt={user.name}
-					/>
+				<div className="flex gap-4 items-center  ">
+					<div className="relative w-8 h-8">
+						<Image
+							referrerPolicy="no-referrer"
+							// 2. Changed objectFit to cover so the avatar doesn't distort
+							className="object-cover rounded-full"
+							fill
+							src={user.image}
+							alt={user.name}
+						/>
+					</div>
 					<p>{user.name}</p>
 				</div>
 			</div>
