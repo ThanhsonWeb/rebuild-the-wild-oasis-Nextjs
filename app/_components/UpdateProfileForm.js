@@ -33,13 +33,17 @@ function UpdateProfileForm({ guest, children }) {
 			<div className="space-y-2">
 				<div className="flex items-center justify-between">
 					<label htmlFor="nationality">Where are you from?</label>
-					<Image
-						src={countryFlag}
-						alt="Country flag"
-						className="h-5 rounded-sm"
-					/>
+					{countryFlag && (
+						<Image
+							src={countryFlag}
+							alt="Country flag"
+							width={32} // Next.js requires explicit widths for remote layout optimization
+							height={20}
+							className="h-5 rounded-sm"
+						/>
+					)}
 				</div>
-            {/* selectCountry */}
+				{/* selectCountry */}
 				{children}
 			</div>
 
@@ -48,7 +52,7 @@ function UpdateProfileForm({ guest, children }) {
 				<input
 					name="nationalID"
 					defaultValue={nationalID}
-               placeholder="your Id ...."
+					placeholder="your Id ...."
 					className="px-5 py-3 bg-gray-500 text-primary-800 w-full shadow-sm rounded-sm"
 				/>
 			</div>
