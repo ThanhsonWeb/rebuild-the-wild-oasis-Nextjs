@@ -9,3 +9,8 @@ export async function SignInAction() {
 export async function SignOutAction() {
 	await signOut({ redirectTo: "/" });
 }
+
+export async function UpdateGuest() {
+   
+}
+
