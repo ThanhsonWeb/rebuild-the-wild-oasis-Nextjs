@@ -8,10 +8,7 @@ export async function getCabin(id) {
 		.from("cabins")
 		.select("*")
 		.eq("id", id)
-		.single();
-
-	// For testing
-	// await new Promise((res) => setTimeout(res, 1000));
+		.maybeSingle();
 
 	if (error) {
 		console.error(error);
@@ -56,7 +53,6 @@ export async function getGuest(email) {
 		.eq("email", email)
 		.single();
 
-	// No error here! We handle the possibility of no guest in the sign in callback
 	return data;
 }
 
@@ -144,7 +140,10 @@ export async function getCountries() {
 // --------------------------------CREATE-------------------------------------
 
 export async function createGuest(newGuest) {
-	const { data, error } = await supabase.from("guests").insert([newGuest]);
+	const { data, error } = await supabase
+		.from("guests")
+		.insert([newGuest])
+		.select();
 
 	if (error) {
 		console.error(error);
