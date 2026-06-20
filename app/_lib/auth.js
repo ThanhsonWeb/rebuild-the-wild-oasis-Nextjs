@@ -8,10 +8,19 @@ const authConfig = {
 			clientSecret: process.env.AUTH_GOOGLE_SECRET,
 		}),
 	],
+
+	callbacks: {
+		authorized({ auth }) {
+			// If auth() find valid session -> return true -> allow access
+			return !!auth.user;
+			// If false -> NEXTjs return to /api/auth/signin.
+		},
+	},
 };
 
 export const {
-	auth, // helper to check current session in server components, API routes, middleware
+	auth, // helper to check current session
 	handlers: { GET, POST }, // route handlers for Next.js App Router
-
+	signIn,
+	signOut,
 } = NextAuth(authConfig);
