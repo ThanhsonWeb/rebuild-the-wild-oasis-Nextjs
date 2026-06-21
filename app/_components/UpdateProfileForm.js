@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SelectCountry from "./SelectCountry";
 import { UpdateGuest } from "../_lib/actions";
+import ButtonSubmit from "./ButtonSubmit";
 
 function UpdateProfileForm({ guest, children }) {
 	const { fullName, email, nationalID, nationality, countryFlag } = guest;
@@ -58,9 +59,7 @@ function UpdateProfileForm({ guest, children }) {
 			</div>
 
 			<div className="flex justify-end items-center gap-6">
-				<button className="bg-yellow-700 px-8 py-4 text-primary-800 font-semibold hover:bg-yellow-600 transition-all disabled:cursor-not-allowed disabled:bg-gray-500 disabled:text-gray-300">
-					Update profile
-				</button>
+				<ButtonSubmit>Update profile</ButtonSubmit>
 			</div>
 		</form>
 	);
