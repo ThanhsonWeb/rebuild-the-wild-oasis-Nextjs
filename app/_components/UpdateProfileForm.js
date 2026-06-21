@@ -43,7 +43,7 @@ function UpdateProfileForm({ guest, children }) {
 						/>
 					)}
 				</div>
-				{/* selectCountry */}
+				{/* selectCountry (Server-c) */}
 				{children}
 			</div>
 
@@ -53,7 +53,7 @@ function UpdateProfileForm({ guest, children }) {
 					name="nationalID"
 					defaultValue={nationalID}
 					placeholder="your Id ...."
-					className="px-5 py-3 bg-gray-500 text-primary-800 w-full shadow-sm rounded-sm"
+					className="px-5 py-3 bg-blue-100 text-gray-800 w-full shadow-sm rounded-sm"
 				/>
 			</div>
 

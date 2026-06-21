@@ -130,6 +130,7 @@ export async function getSettings() {
 	return data;
 }
 import countriesData from "./countries.json";
+
 export async function getCountries() {
 	return countriesData.map((c) => ({
 		name: c.name,
