@@ -131,4 +131,6 @@ export async function createBooking(bookingData, formData) {
 	if (error) throw new Error("Could not Insert Booking");
 
 	revalidatePath(`/cabins/${bookingData.cabinId}`);
+
+	redirect("/cabins/thankyou")
 }
