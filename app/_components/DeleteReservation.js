@@ -5,7 +5,7 @@ import { DeleteBooking } from "../_lib/actions";
 import { useTransition } from "react";
 
 function DeleteReservation({ bookingId, onDelete }) {
-	const { isPending, startTransition } = useTransition();
+	const [isPending, startTransition] = useTransition();
 
 	function handleDelete() {
 		startTransition(() => onDelete(bookingId));
